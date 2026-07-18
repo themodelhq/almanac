@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: almanac-ai
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: CEREBRAS_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: GITHUB_MODELS_TOKEN
+        sync: false
+      - key: HF_API_KEY
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
